@@ -43,6 +43,8 @@ function FilterProvider({ children, products }) {
             setMaxPrice,
             currentPage,
             setCurrentPage,
+            searchQuery,
+            setSearchQuery,
             filtered,
             totalPages,
             paginated,

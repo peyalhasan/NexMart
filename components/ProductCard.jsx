@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductCard({ product }) {
-  console.log(product)
   return (
     <Link href={`/product/${product.id}`}>
       <div className="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 flex flex-col h-full cursor-pointer">
