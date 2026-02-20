@@ -1,7 +1,7 @@
 "use client"
 
 import { FilterContext } from "@/context"
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 const ITEMS_PER_PAGE = 8;
 
@@ -12,7 +12,7 @@ function FilterProvider({ children }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
 
-    
+
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
