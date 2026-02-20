@@ -13,6 +13,7 @@ function Modal({ children }) {
         if (!modalRef.current?.open) {
             modalRef.current.showModal()
         }
+       
     }, [])
 
     function onHide() {
@@ -22,7 +23,8 @@ function Modal({ children }) {
     return createPortal(
         <dialog
             ref={modalRef}
-            className="w-full max-w-4xl max-h-[80vh] overflow-y-auto 
+           
+            className="w-full max-w-4xl max-h-[90vh] overflow-y-auto 
                        bg-white rounded-2xl shadow-2xl p-6"
             onClose={onHide}
         >

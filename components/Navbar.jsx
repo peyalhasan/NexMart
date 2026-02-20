@@ -3,7 +3,7 @@ import Search from "./Search";
 
 export default function Navbar() {
     return (
-        <nav className="bg-[#2d1810] border-b border-[#3a2020] shadow-md sticky top-0 z-50 container mx-auto">
+        <nav className="bg-[#2d1810] border-b border-[#3a2020] shadow-md sticky top-0 z-50 max-w-7xl mx-auto px-4">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
 
                 {/* Logo */}
