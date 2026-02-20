@@ -3,6 +3,7 @@ import "./globals.css";
 import FilterProvider from "@/Providers/FilterProvider";
 
 import Footer from "@/components/Footer";
+import { getAllProducts } from "@/lib";
 
 export const metadata = {
   title: "NEXMART",
@@ -11,12 +12,13 @@ export const metadata = {
 
 export default async function RootLayout({ children, }) {
 
- 
+  const products = await getAllProducts()
+
   return (
     <html lang="en">
       <body className="bg-gray-100 min-h-screen ">
         <div>
-          <FilterProvider >
+          <FilterProvider products={products} >
             <Navbar />
             {children}
             <Footer />

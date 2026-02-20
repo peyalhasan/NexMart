@@ -5,20 +5,13 @@ import { useEffect, useMemo, useState } from "react"
 
 const ITEMS_PER_PAGE = 8;
 
-function FilterProvider({ children }) {
-    const [products, setProducts] = useState([])
+function FilterProvider({ children, products }) {
     const [selectedCategory, setSelectedCategory] = useState('all')
     const [maxPrice, setMaxPrice] = useState(1000);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
 
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-            .catch(() => setProducts([]))
-    }, [])
 
     const categories = useMemo(() => {
         return [...new Set(products.map(product => product.category))]
