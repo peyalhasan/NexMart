@@ -5,13 +5,20 @@ import { useMemo, useState } from "react"
 
 const ITEMS_PER_PAGE = 8;
 
-function FilterProvider({ children, products }) {
-
+function FilterProvider({ children }) {
+    const [products, setProducts] = useState([])
     const [selectedCategory, setSelectedCategory] = useState('all')
     const [maxPrice, setMaxPrice] = useState(1000);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
 
+    
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+            .catch(() => setProducts([]))
+    }, [])
 
     const categories = useMemo(() => {
         return [...new Set(products.map(product => product.category))]
@@ -29,7 +36,7 @@ function FilterProvider({ children, products }) {
 
     const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
 
-    const  paginated = filtered.slice(
+    const paginated = filtered.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     )
