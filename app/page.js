@@ -3,7 +3,6 @@ import Pagination from "@/components/Pagination";
 import Hero from "@/components/Hero";
 
 import ProductList from "@/components/ProductList";
-import Error from "@/components/Error";
 
 
 export default async function Home() {
