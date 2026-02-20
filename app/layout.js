@@ -14,10 +14,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-100 min-h-screen container mx-auto">
-        <FilterProvider products={products}>
-          <Navbar />
-          {children}
-        </FilterProvider>
+        <div>
+          <FilterProvider products={products}>
+            <Navbar />
+            {children}
+          </FilterProvider>
+        </div>
+        <div id="modal-root-content" />
       </body>
     </html>
   );

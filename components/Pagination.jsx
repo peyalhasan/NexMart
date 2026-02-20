@@ -12,7 +12,7 @@ export default function Pagination({ }) {
           onClick={() => setCurrentPage(i + 1)}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
             currentPage === i + 1
-              ? "bg-indigo-600 text-white"
+              ? "bg-amber-950 text-white"
               : " text-gray-700 border hover:bg-indigo-50"
           }`}
         >

@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
           {product.description}
         </p>
         <div className="mt-auto">
-          <span className="text-indigo-600 font-bold text-lg">
+          <span className="text-amber-950 font-bold text-lg">
             ${product.price}
           </span>
         </div>

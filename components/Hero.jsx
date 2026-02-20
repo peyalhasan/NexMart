@@ -1,73 +1,52 @@
-import Link from "next/link";
-
-export default function Hero({ searchQuery, setSearchQuery }) {
+export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-10">
-        
-        {/* Left Text */}
-        <div className="flex-1 text-center md:text-left">
-          <span className="/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block">
-            🛍️ New Arrivals Available
+    <section className="relative overflow-hidden bg-[#0a0a0a] text-white min-h-[460px] flex items-center justify-center mb-8 py-6">
+
+      <div className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full opacity-20"
+        style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)' }}
+      />
+
+      <div className="relative text-center px-6">
+        <div className="inline-flex items-center gap-2 border border-orange-500/40 bg-orange-500/10 text-orange-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-8">
+          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse" />
+          New Arrivals — Updated Daily
+        </div>
+
+        <h1 className="text-6xl md:text-8xl font-black leading-none tracking-tight mb-6">
+          Shop
+          <span className="block text-transparent"
+            style={{ WebkitTextStroke: '2px #f97316' }}
+          >
+            Smarter.
           </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            Shop Smarter, <br />
-            <span className="text-yellow-300">Live Better.</span>
-          </h1>
-          <p className="text-white/80 text-base md:text-lg mb-8 max-w-md">
-            Discover thousands of products at unbeatable prices. From electronics to fashion — all in one place.
-          </p>
+          <span className="block text-yellow-400">Live Better.</span>
+        </h1>
 
-          {/* Search Bar */}
-          <div className="flex items-center  rounded-xl overflow-hidden shadow-lg max-w-md mx-auto md:mx-0">
-            <span className="pl-4 text-gray-400 text-lg">🔍</span>
+        <p className="text-gray-400 text-lg max-w-md mx-auto leading-relaxed">
+          Thousands of products at unbeatable prices — all in one place.
+        </p>
         
-          </div>
-
-          {/* Stats */}
-          <div className="flex gap-8 mt-10 justify-center md:justify-start">
-            <div>
-              <p className="text-2xl font-bold">200+</p>
-              <p className="text-white/70 text-sm">Products</p>
+        <div className="flex gap-12 mt-12 justify-center">
+          {[
+            { value: '200+', label: 'Products' },
+            { value: '4', label: 'Categories' },
+            { value: '100%', label: 'Secure' },
+          ].map(({ value, label }) => (
+            <div key={label}>
+              <p className="text-3xl font-black text-white">{value}</p>
+              <p className="text-gray-500 text-xs mt-1">{label}</p>
             </div>
-            <div>
-              <p className="text-2xl font-bold">4</p>
-              <p className="text-white/70 text-sm">Categories</p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold">100%</p>
-              <p className="text-white/70 text-sm">Secure</p>
-            </div>
-          </div>
+          ))}
         </div>
-
-        {/* Right Card */}
-        <div className="flex-1 flex justify-center">
-          <div className="relative /10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 w-72">
-            <div className="/20 rounded-2xl h-48 flex items-center justify-center mb-4">
-              <span className="text-7xl">🛒</span>
-            </div>
-            <div className="space-y-2">
-              <div className="/20 h-3 rounded-full w-3/4" />
-              <div className="/20 h-3 rounded-full w-1/2" />
-              <div className="flex justify-between items-center mt-3">
-                <div className="bg-yellow-300 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full">
-                  Best Deal
-                </div>
-                <span className="text-white font-bold text-lg">$29.99</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      {/* Wave Bottom */}
-      <div className="overflow-hidden">
-        <svg viewBox="0 0 1440 60" className="w-full" preserveAspectRatio="none">
-          <path fill="#f3f4f6" d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" />
-        </svg>
-      </div>
     </section>
   );
 }

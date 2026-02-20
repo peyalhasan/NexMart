@@ -9,9 +9,9 @@ export default function FilterBar() {
   maxPrice,
   setMaxPrice,} = useFilter()
   return (
-    <div className="flex bg-slate-500 flex-wrap gap-4 items-center mb-8  p-4 rounded-2xl shadow">
+    <div className="flex bg-[#2d1810] flex-wrap gap-4 items-center mb-8  p-4 rounded-2xl shadow">
       <div>
-        <label className="text-sm font-medium text-gray-600 mr-2">
+        <label className="text-sm font-medium text-white mr-2">
           Category:
         </label>
         <select
@@ -29,7 +29,7 @@ export default function FilterBar() {
       </div>
 
       <div className="flex items-center gap-2">
-        <label className="text-sm font-medium text-gray-600">
+        <label className="text-sm font-medium text-white">
           Max Price: ${maxPrice}
         </label>
         <input

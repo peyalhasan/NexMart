@@ -13,3 +13,19 @@ body {
     text-wrap: balance;
   }
 }
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+
+}
+
+dialog {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 9999;
+}
