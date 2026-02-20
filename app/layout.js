@@ -10,8 +10,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children, }) {
+  
+  let products = []
 
-  const products = await getAllProducts()
+  try {
+    products = await getAllProducts()
+  } catch (error) {
+    products = []
+  }
   return (
     <html lang="en">
       <body className="bg-gray-100 min-h-screen ">
